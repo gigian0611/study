@@ -36,12 +36,12 @@ void Render::init() {
   camera.setScreenSize((float)renderWidth, (float)renderHeight);
   camera.initOrbit(float3(0.0f, 160.0f, 0.0f), 100.0f, 0.0f, 0.0f);
 
-  MeshData mesh{&cmdqueue, &cmdlist, "./data/metahuman.obj", 0, 0, 0, true,
+  MeshData mesh{&cmdqueue, &cmdlist, "./data/mesh.obj", 0, 0, 0, true,
                 false,     false};
   DepthTarget depth{&srvHeap,    &dsvHeap,    &cmdqueue, DXGI_FORMAT_D32_FLOAT,
                     renderWidth, renderHeight};
   Texture skin{&srvHeap, &cmdqueue, DXGI_FORMAT_R8G8B8A8_UNORM,
-               "./data/FaceBaseColor.png"};
+               "./data/FaceColor.png"};
 
 
   mdPass.setTargetSize(renderWidth, renderHeight);
